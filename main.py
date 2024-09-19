@@ -22,6 +22,8 @@ def detect(device):
             break
 
         frame = cv2.flip(frame, 1)
+
+        # Example result: [{'box': [264, 247, 105, 130], 'emotions': {'angry': 0.05, 'disgust': 0.0, 'fear': 0.02, 'happy': 0.29, 'sad': 0.04, 'surprise': 0.0, 'neutral': 0.59}}]
         emotions = detector.detect_emotions(frame)
         frame = draw_annotations(frame, emotions)
 
